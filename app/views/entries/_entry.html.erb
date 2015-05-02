@@ -6,5 +6,10 @@
   <span class="body"><%= entry.body %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(entry.created_at) %> ago.
+    <% if current_user?(entry.user) %>
+      <%= link_to "delete", entry, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
   </span>
 </li>

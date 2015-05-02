@@ -18,4 +18,13 @@ test "should redirect destroy when not logged in" do
 	end
 	assert_redirected_to login_url
 end
+
+test "should redirect destroy for wrong entry" do
+	log_in_as(users(:michael))
+	entry = entries(:ants)
+	assert_no_difference 'Entry.count' do
+		delete :destroy, id: entry
+	end
+	assert_redirected_to root_url
+end
 end

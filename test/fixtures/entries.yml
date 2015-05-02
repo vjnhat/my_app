@@ -22,6 +22,30 @@ most_recent:
   created_at: <%= Time.zone.now %>
   user: michael
 
+ants:
+  title: "new entry"
+  body: "Oh, is that what you want? Because that's how you get ants!"
+  created_at: <%= 2.years.ago %>
+  user: archer
+
+zone:
+  title: "Danger zone!"
+  body: "Danger!!!"
+  created_at: <%= 3.days.ago %>
+  user: archer
+
+tone:
+  title: "Say sorry"
+  body: "I'm sorry. Your words made sense, but your sarcastic tone did not."
+  created_at: <%= 10.minutes.ago %>
+  user: lana
+
+van:
+  title: "new entry 2"
+  body: "Dude, this van's, like, rolling probable cause."
+  created_at: <%= 4.hours.ago %>
+  user: lana
+
 <% 30.times do |n| %>
 entry_<%= n %>:
   title: <%= Faker::Lorem.sentence(5) %>
