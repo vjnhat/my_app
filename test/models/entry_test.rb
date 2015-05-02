@@ -40,4 +40,12 @@ class EntryTest < ActiveSupport::TestCase
  	assert_equal Entry.first, entries(:most_recent)
  end
 
+ test "associated comments should be destroyed" do
+ 	@entry.save
+ 	@entry.comments.create!(user_id:"1", content: "lorum ipsum")
+ 	assert_difference 'Comment.count' , -1 do
+ 		@entry.destroy
+ 	end
+ end
+
 end
