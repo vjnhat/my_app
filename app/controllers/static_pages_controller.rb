@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
   end
 
   def news
-    @feed_items = User.find(1).feed.paginate(page: params[:page])
+    @feed_items = User.first.feed.paginate(page: params[:page])
   end
 
   def thunderbird

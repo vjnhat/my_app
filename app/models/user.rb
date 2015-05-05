@@ -28,9 +28,6 @@ validates :password, length: { minimum: 6 }, allow_blank: true
 
    # Defines a proto-feed.
   # See "Following users" for the full implementation.
-  def feed
-    Entry.where("user_id = ?", id)
-  end
 
   # Returns a random token.
   def User.new_token

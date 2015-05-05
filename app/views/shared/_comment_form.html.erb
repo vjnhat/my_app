@@ -2,6 +2,7 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.text_area :content, placeholder: "post new comment" %>
+    <%= f.text_field :entry_id, hidden: "true" %>
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>

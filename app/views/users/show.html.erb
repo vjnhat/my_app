@@ -20,12 +20,5 @@
       </ol>
       <%= will_paginate @entries %>
     <% end %>
-    <% if @user.comments.any? %>
-      <h3>Comment (<%= @user.comments.count %>)</h3>
-      <ol class="comments">
-        <%= render @comments %>
-      </ol>
-      <%= will_paginate @entries %>
-    <% end %>
    </div>
 </div>
